@@ -22,7 +22,7 @@ public class Quote {
   private long id;
 
   @ColumnInfo(name = "source_id", index = true)
-  private long sourceId;
+  private Long sourceId;
 
   @Nonnull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
@@ -36,11 +36,11 @@ public class Quote {
     this.id = id;
   }
 
-  public long getSourceId() {
+  public Long getSourceId() {
     return sourceId;
   }
 
-  public void setSourceId(long sourceId) {
+  public void setSourceId(Long sourceId) {
     this.sourceId = sourceId;
   }
 
