@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.quotes.model.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -51,4 +52,11 @@ public class Quote {
   public void setText(@Nonnull String text) {
     this.text = text;
   }
+
+  @NonNull
+  @Override
+  public String toString() {
+    return text;
+  }
+
 }
