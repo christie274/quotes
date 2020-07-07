@@ -5,10 +5,10 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".controller.QuotesFragment">
+  tools:context=".controller.SourcesFragment">
 
   <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/quote_list"
+    android:id="@+id/source_list"
     android:layout_width="0dp"
     android:layout_height="0dp"
     app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
     android:padding="@dimen/half_margin"/>
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/add_quote"
+    android:id="@+id/add_source"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:src="@drawable/ic_add"

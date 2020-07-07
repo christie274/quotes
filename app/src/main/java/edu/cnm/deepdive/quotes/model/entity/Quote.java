@@ -5,7 +5,6 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
-import javax.annotation.Nonnull;
 
 @Entity(
     foreignKeys = @ForeignKey(
@@ -24,7 +23,7 @@ public class Quote {
   @ColumnInfo(name = "source_id", index = true)
   private Long sourceId;
 
-  @Nonnull
+  @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String text = "";
 
@@ -44,12 +43,12 @@ public class Quote {
     this.sourceId = sourceId;
   }
 
-  @Nonnull
+  @NonNull
   public String getText() {
     return text;
   }
 
-  public void setText(@Nonnull String text) {
+  public void setText(@NonNull String text) {
     this.text = text;
   }
 

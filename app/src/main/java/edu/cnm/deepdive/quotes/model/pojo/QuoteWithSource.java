@@ -24,4 +24,5 @@ public class QuoteWithSource extends Quote {
     String sourceName = (source != null) ? source.getName() : "(unknown)";
     return String.format("%s%n\u2014%s", getText(), sourceName);
   }
+
 }

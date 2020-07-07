@@ -20,7 +20,7 @@
   <fragment
     android:id="@+id/navigation_sources"
     android:label="@string/title_sources"
-    android:name="edu.cnm.deepdive.quotes.controller.NotificationsFragment"
-    tools:layout="@layout/fragment_notifications"/>
+    android:name="edu.cnm.deepdive.quotes.controller.SourcesFragment"
+    tools:layout="@layout/fragment_sources"/>
 
 </navigation>

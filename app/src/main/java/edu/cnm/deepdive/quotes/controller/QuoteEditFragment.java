@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.quotes;
+package edu.cnm.deepdive.quotes.controller;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -59,7 +59,7 @@ public class QuoteEditFragment extends DialogFragment implements TextWatcher {
     sourceName = root.findViewById(R.id.source_name);
     quoteText.addTextChangedListener(this);
     dialog = new AlertDialog.Builder(getContext())
-       .setIcon(R.drawable.ic_message)
+        .setIcon(R.drawable.ic_message)
         .setTitle("Quote Details")
         .setView(root)
         .setPositiveButton(android.R.string.ok, (dlg, which) -> save())
@@ -78,6 +78,7 @@ public class QuoteEditFragment extends DialogFragment implements TextWatcher {
       for (Source s : sources) {
         if (name.equalsIgnoreCase(s.getName())) {
           quote.setSourceId(s.getId());
+          break;
         }
       }
     }
@@ -106,19 +107,13 @@ public class QuoteEditFragment extends DialogFragment implements TextWatcher {
         this.quote = quote;
         if (quote != null) {
           quoteText.setText(quote.getText());
-          sourceName.setText(quote.getSource() != null ? quote.getSource().getName() : "");
+          sourceName.setText((quote.getSource() != null) ? quote.getSource().getName() : "");
         }
       });
       viewModel.setQuoteId(quoteId);
     } else {
       quote = new Quote();
     }
-  }
-
-  private void checkSubmitCondition() {
-    Button positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-    positive.setEnabled(!quoteText.getText().toString().trim().isEmpty());
-
   }
 
   @Override
@@ -131,6 +126,14 @@ public class QuoteEditFragment extends DialogFragment implements TextWatcher {
 
   @Override
   public void afterTextChanged(Editable s) {
-checkSubmitCondition();
+    checkSubmitCondition();
   }
+
+  private void checkSubmitCondition() {
+    Button positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+    positive.setEnabled(!quoteText.getText().toString().trim().isEmpty());
+  }
+
 }
+
+

@@ -41,6 +41,6 @@ public interface SourceDao {
 
   @Transaction
   @Query("SELECT * FROM Source WHERE source_id = :sourceId")
-  LiveData<SourceWithQuotes> selectById(long sourceId);
+  Single<SourceWithQuotes> selectById(long sourceId);
 
 }

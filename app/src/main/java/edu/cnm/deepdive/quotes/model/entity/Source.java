@@ -6,9 +6,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-import javax.annotation.Nonnull;
 
-@Entity (
+@Entity(
     indices = @Index(value = "name", unique = true)
 )
 public class Source {
@@ -17,7 +16,7 @@ public class Source {
   @ColumnInfo(name = "source_id")
   private long id;
 
-  @Nonnull
+  @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String name = "";
 
@@ -44,7 +43,8 @@ public class Source {
 
   @Override
   public boolean equals(@Nullable Object obj) {
-    return (obj == this) || (obj instanceof Source && name.equalsIgnoreCase(((Source) obj).name));
+    return (obj == this)
+        || (obj instanceof Source  && name.equalsIgnoreCase(((Source) obj).name));
   }
 
   @NonNull
@@ -52,4 +52,5 @@ public class Source {
   public String toString() {
     return name;
   }
+
 }
