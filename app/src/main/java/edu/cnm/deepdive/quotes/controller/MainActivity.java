@@ -22,17 +22,17 @@ public class MainActivity extends AppCompatActivity {
     // Passing each menu ID as a set of Ids because each
     // menu should be considered as top level destinations.
     AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-        R.id.navigation_home, R.id.navigation_quotes, R.id.navigation_notifications)
+        R.id.navigation_home, R.id.navigation_quotes, R.id.navigation_sources)
         .build();
     NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     NavigationUI.setupWithNavController(navView, navController);
     MainViewModel viewModel = new ViewModelProvider(this).get(MainViewModel.class);
     getLifecycle().addObserver(viewModel);
-    viewModel.getThrowable().observe(this, (throwable) ->{
-     if (throwable != null) {
-       Toast.makeText(this, throwable.getMessage(), Toast.LENGTH_LONG).show();
-     }
+    viewModel.getThrowable().observe(this, (throwable) -> {
+      if (throwable != null) {
+        Toast.makeText(this, throwable.getMessage(), Toast.LENGTH_LONG).show();
+      }
     });
   }
 

@@ -69,10 +69,12 @@ public class QuoteAdapter extends RecyclerView.Adapter<Holder> {
       source.setText(String.format(sourceFormat, sourceName));
       itemView.setOnClickListener((v) -> clickListener.onClick(v, getAdapterPosition(), item));
     }
+
   }
+
   public interface OnClickListener {
 
-      void onClick(View v, int position, QuoteWithSource quote);
+    void onClick(View v, int position, QuoteWithSource quote);
 
   }
 

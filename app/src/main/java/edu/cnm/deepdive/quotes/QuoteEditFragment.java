@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.quotes.controller;
+package edu.cnm.deepdive.quotes;
 
 import android.app.Dialog;
 import android.os.Bundle;

@@ -6,13 +6,13 @@ import edu.cnm.deepdive.quotes.model.dao.SourceDao;
 import edu.cnm.deepdive.quotes.model.entity.Source;
 import java.util.List;
 
-public class SourcesRepository {
+public class SourceRepository {
 
   private final Context context;
   private final QuotesDatabase database;
   private final SourceDao sourceDao;
 
-  public SourcesRepository(Context context) {
+  public SourceRepository(Context context) {
     this.context = context;
     database = QuotesDatabase.getInstance();
     sourceDao = database.getSourceDao();
@@ -22,5 +22,6 @@ public class SourcesRepository {
     return sourceDao.selectAll();
   }
 
-  //TODO Add methods for ave, delete, get.
+  // TODO Add methods for save, delete, get.
+
 }
