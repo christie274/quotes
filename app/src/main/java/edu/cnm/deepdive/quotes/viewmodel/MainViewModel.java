@@ -19,16 +19,15 @@ import java.util.List;
 public class MainViewModel extends AndroidViewModel implements LifecycleObserver {
 
   private final QuoteRepository quoteRepository;
-  private final SourceRepository sourcesRepository;
+  private final SourceRepository sourceRepository;
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
   private final MutableLiveData<QuoteWithSource> quote;
 
-
   public MainViewModel(@NonNull Application application) {
     super(application);
     quoteRepository = new QuoteRepository(application);
-    sourcesRepository = new SourceRepository(application);
+    sourceRepository = new SourceRepository(application);
     quote = new MutableLiveData<>();
     throwable = new MutableLiveData<>();
     pending = new CompositeDisposable();
@@ -38,10 +37,10 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     return quoteRepository.getAll();
   }
 
-public LiveData<List<Source>> getSources() {
-    return sourcesRepository.getAll();
+  public LiveData<List<Source>> getSources() {
+    return sourceRepository.getAll();
+  }
 
-}
   public LiveData<QuoteWithSource> getQuote() {
     return quote;
   }
@@ -73,7 +72,6 @@ public LiveData<List<Source>> getSources() {
     );
   }
 
-
   public void deleteQuote(Quote quote) {
     throwable.setValue(null);
     pending.add(
@@ -85,7 +83,6 @@ public LiveData<List<Source>> getSources() {
             )
     );
   }
-
 
   @OnLifecycleEvent(Event.ON_STOP)
   private void clearPending() {

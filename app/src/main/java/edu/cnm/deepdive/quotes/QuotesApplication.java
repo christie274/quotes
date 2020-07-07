@@ -17,4 +17,5 @@ public class QuotesApplication extends Application {
         .subscribe();
     Stetho.initializeWithDefaults(this);
   }
+
 }

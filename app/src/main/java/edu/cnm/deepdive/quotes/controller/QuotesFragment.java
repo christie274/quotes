@@ -48,7 +48,8 @@ public class QuotesFragment extends Fragment implements QuoteAdapter.OnClickList
   }
 
   private void editQuote(long quoteId) {
-    edu.cnm.deepdive.quotes.QuoteEditFragment fragment = edu.cnm.deepdive.quotes.QuoteEditFragment.newInstance(quoteId);
+    QuoteEditFragment fragment = QuoteEditFragment.newInstance(quoteId);
     fragment.show(getChildFragmentManager(), fragment.getClass().getName());
   }
+
 }
